@@ -1,0 +1,1 @@
+HOST = "https://deoab.oab.org.br/api/v1"

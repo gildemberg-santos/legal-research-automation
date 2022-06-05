@@ -1,13 +1,14 @@
 from datetime import datetime
+from xmlrpc.client import DateTime
 from src.oab import Oab
 
 
 class ElectronicDiaryList:
-    def __init__(self, full_page=True, page=1, term='', start_date=datetime.now(), end_date=datetime.now(), id_organization='') -> None:
+    def __init__(self, page: int = 1, term: str = '', start_date: DateTime = datetime.now(), end_date: DateTime = datetime.now(), id_organization: str = '') -> None:
         start_date = start_date.strftime('%d/%m/%Y')
         end_date = end_date.strftime('%d/%m/%Y')
-        self.url = f'https://deoab.oab.org.br/api/v1/diario/pesquisa?pagina={page}&termo={term}&inicio={start_date}&fim={end_date}&idOrganizacao={id_organization}'
+        self.endpoint = f'diario/pesquisa?pagina={page}&termo={term}&inicio={start_date}&fim={end_date}&idOrganizacao={id_organization}'
 
     def get_electronic_diary_list(self) -> dict:
         oab = Oab()
-        return oab.get_oab_data(self.url)
+        return oab.get_oab_data(endpoint=self.endpoint)
