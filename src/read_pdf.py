@@ -1,11 +1,9 @@
-# -*- coding: utf-8 -*-
-from ast import parse
 import PyPDF2
 import re
 
 
 class ReadPDF:
-    def __init__(self, file_name) -> None:
+    def __init__(self, file_name: str) -> None:
         self.file_name = file_name
 
     def read_pdf(self, full_page: bool = True, page_number: int = 0) -> str:
