@@ -2,7 +2,7 @@
 from src.read_pdf import ReadPDF
 
 # search = "00423113820008140301"
-document = ReadPDF('data/DJ.pdf').read_pdf(full_file=True, page_number=0)
+document = ReadPDF('data/DJ SE 5869 28-07-2022.pdf').read_pdf(full_file=True, page_number=0)
 print(document)
 # processes = document.split('PROCESSO: ')
 # number_of_processes = len(processes)
