@@ -6,10 +6,10 @@ class ReadPDF:
     def __init__(self, file_name: str) -> None:
         self.file_name = file_name
 
-    def read_pdf(self, full_page: bool = True, page_number: int = 0) -> str:
+    def read_pdf(self, full_file: bool = True, page_number: int = 0) -> str:
         pdf_file = open(self.file_name, 'rb')
         read_pdf = PyPDF2.PdfFileReader(pdf_file)
-        number_of_pages = read_pdf.numPages if full_page else page_number
+        number_of_pages = read_pdf.numPages if full_file else page_number
         parsed = ""
         for i in range(number_of_pages):
             page = read_pdf.getPage(i)
