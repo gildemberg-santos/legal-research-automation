@@ -17,3 +17,10 @@ class ReadPDF:
             parsed += ''.join(page_content)
         parsed = re.sub('n', '', parsed)
         return parsed
+
+    def save_txt(self, file_output: str) -> None:
+        string_file = self.read_pdf(full_file=True)
+        file = open(file_output, 'w')
+        file.writelines(string_file)
+        file.close()
+
