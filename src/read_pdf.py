@@ -1,11 +1,16 @@
 import PyPDF2
 import re
 
-
 class ReadPDF:
+    # Construtor
+    # Recebe o caminho do arquivo PDF
     def __init__(self, file_name: str) -> None:
         self.file_name = file_name
 
+    # Lê o arquivo PDF
+    # Recebe um parâmetro booleano para retornar o arquivo completo
+    # Recebe um parâmetro inteiro para retornar uma página específica
+    # Retorna uma string com o conteúdo do arquivo
     def read_pdf(self, full_file: bool = True, page_number: int = 0) -> str:
         pdf_file = open(self.file_name, 'rb')
         read_pdf = PyPDF2.PdfFileReader(pdf_file)
@@ -18,6 +23,7 @@ class ReadPDF:
         parsed = re.sub('n', '', parsed)
         return parsed
 
+    # Salva o arquivo PDF em um arquivo de texto
     def save_txt(self, file_output: str) -> None:
         string_file = self.read_pdf(full_file=True)
         file = open(file_output, 'w')
