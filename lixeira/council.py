@@ -1,4 +1,4 @@
-from src.oab import Oab
+from lixeira.oab import Oab
 
 
 class Council:

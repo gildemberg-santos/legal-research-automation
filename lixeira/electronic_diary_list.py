@@ -1,6 +1,6 @@
 from datetime import datetime
 from xmlrpc.client import DateTime
-from src.oab import Oab
+from lixeira.oab import Oab
 
 
 class ElectronicDiaryList:

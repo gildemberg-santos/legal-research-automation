@@ -1,5 +1,5 @@
 import requests
-from config import HOST
+from lixeira.config import HOST
 class Oab:
     def get_oab_data(self, endpoint:str) -> dict:
         self.url = f'{HOST}/{endpoint}'
