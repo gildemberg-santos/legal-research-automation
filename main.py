@@ -2,8 +2,10 @@ import os
 from src.read_pdf import ReadPDF
 from src.file import File
 
+# Função Lambda para limpar o terminal
 cls = lambda: os.system('cls' if os.name=='nt' else 'clear')
 
+# Bloco responsável por listar os arquivos PDF
 cls()
 print('Listando arquivos PDF\n')
 files = File('./').get_files()
@@ -11,6 +13,7 @@ for i in range(len(files)):
     print(f'    [{i}] - {files[i]}')
 file = int(input('\nDigite o número do arquivo PDF para ler: '))
 
+# Bloco responsável por configurar leitura do PDF
 cls()
 print (f'Arquivo selecionado: {files[file]}')
 print('\nEscolha uma opção:\n')
