@@ -1,16 +1,24 @@
-# -*- coding: utf-8 -*-
+import os
 from src.read_pdf import ReadPDF
+from src.file import File
 
-# search = "00423113820008140301"
-document = ReadPDF('data/DJ SE 5869 28-07-2022.pdf').read_pdf(full_file=True, page_number=0)
-print(document)
-# processes = document.split('PROCESSO: ')
-# number_of_processes = len(processes)
+cls = lambda: os.system('cls' if os.name=='nt' else 'clear')
 
-# for i in range(number_of_processes):
-#     if processes[i].find(search) != -1:
-#         print("========================================")
-#         print(processes[i])
+cls()
+print('Listando arquivos PDF\n')
+files = File('./').get_files()
+for i in range(len(files)):
+    print(f'    [{i}] - {files[i]}')
+file = int(input('\nDigite o número do arquivo PDF para ler: '))
 
-# Teste com o Github
-#teste 2
+cls()
+print (f'Arquivo selecionado: {files[file]}')
+print('\nEscolha uma opção:\n')
+print('    [1] - Ler todo o arquivo')
+print('    [2] - Ler uma página específica')
+option = int(input('\nDigite a opção: '))
+
+# Inicializa a classe ReadPDF
+
+cls()
+print('Lendo arquivo PDF ...\n')
