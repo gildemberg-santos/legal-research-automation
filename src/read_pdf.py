@@ -1,6 +1,7 @@
 import PyPDF2
 import re
 
+# Classe responsável por ler os arquivos PDF
 class ReadPDF:
     # Construtor
     # Recebe o caminho do arquivo PDF
