@@ -8,7 +8,7 @@ cls = lambda: os.system('cls' if os.name=='nt' else 'clear')
 # Bloco responsável por listar os arquivos PDF
 cls()
 print('Listando arquivos PDF\n')
-files = File('./').get_files()
+files = File('./data').get_files()
 for i in range(len(files)):
     print(f'    [{i}] - {files[i]}')
 file = int(input('\nDigite o número do arquivo PDF para ler: '))
@@ -25,3 +25,7 @@ option = int(input('\nDigite a opção: '))
 
 cls()
 print('Lendo arquivo PDF ...\n')
+file_name = files[file]
+lertodo_pdf = ReadPDF(file_name)
+lertodo_pdf.save_txt('./data/teste.txt')
+print('pdf tranformado em txt ...\n')
