@@ -1,5 +1,8 @@
 import PyPDF2
 import re
+import codecs
+
+
 
 # Classe responsável por ler os arquivos PDF
 class ReadPDF:
@@ -27,7 +30,7 @@ class ReadPDF:
     # Salva o arquivo PDF em um arquivo de texto
     def save_txt(self, file_output: str) -> None:
         string_file = self.read_pdf(full_file=True)
-        file = open(file_output, 'w')
+        file = codecs.open(file_output, 'w', 'utf-8')
         file.writelines(string_file)
         file.close()
 
