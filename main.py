@@ -1,6 +1,7 @@
 import os
 from src.read_pdf import ReadPDF
 from src.file import File
+import sqlite3
 
 # Função Lambda para limpar o terminal
 cls = lambda: os.system('cls' if os.name=='nt' else 'clear')
@@ -29,3 +30,4 @@ file_name = files[file]
 lertodo_pdf = ReadPDF(file_name)
 lertodo_pdf.save_txt('./data/teste.txt')
 print('pdf tranformado em txt ...\n')
+
